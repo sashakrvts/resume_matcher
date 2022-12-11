@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortlisted Students</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="offset-sm-4" style="margin-top:10px; font-weight: 600;"><u>Result</u></h3>
+    </div>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-center" style="vertical-align:middle;">No</th>
+                    <th class="text-center" style="vertical-align:middle;">Name</th>
+                    <th class="text-center" style="vertical-align:middle;">Email</th>
+                    <th class="text-center" style="vertical-align:middle;">Phone</th>
+                    <th class="text-center" style="vertical-align:middle;">Skills</th>
+                    <th class="text-center" style="vertical-align:middle;">Education</th>
+                    <th class="text-center" style="vertical-align:middle;">Matching</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(0,data|length) %}
+                <tr>
+                    <td class="text-center" style="vertical-align:middle;">{{(i+1)}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Name']}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Email']}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Mobile_no']}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Skills']}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Education']}}</td>
+                    <td class="text-center" style="vertical-align:middle;">{{data[i]['Total_Percentage']}}</td>
+                    <!-- <td><input type="button" name="view" value="View" id="{{data[i]['_id']}}" data-bs-toggle="modal" data-bs-target="#viewdetails"  class="btn btn-secondary view_data" style="margin-left:10%;" /></td> -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+</body>
+</html>
